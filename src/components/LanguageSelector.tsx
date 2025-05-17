@@ -12,42 +12,37 @@ import { useNavigate } from "react-router-dom";
 type Language = "pt-BR" | "en-US";
 
 const BrazilFlag = () => (
-  <div className="brasil-flag w-6 h-4 relative rounded-sm overflow-hidden">
-    <div className="absolute inset-0 bg-[#16b83e]"></div>
-    <div className="losangue w-full h-full">
-      <div className="absolute w-0 h-0 left-[3px] right-[3px] top-[2px]
-        border-l-[15px] border-l-transparent 
-        border-r-[15px] border-r-transparent 
-        border-b-[10px] border-b-[#ffe11f]"></div>
-      <div className="absolute w-0 h-0 left-[3px] right-[3px] bottom-[2px]
-        border-l-[15px] border-l-transparent 
-        border-r-[15px] border-r-transparent 
-        border-t-[10px] border-t-[#ffe11f]"></div>
+  <div className="brasil-flag w-7 h-5 relative bg-[#16b83e] rounded-sm overflow-hidden">
+    <div className="losangue w-full h-full relative">
+      <div className="absolute w-0 h-0 left-[2px] right-[2px] top-[2px]
+        border-l-[12px] border-l-transparent 
+        border-r-[12px] border-r-transparent 
+        border-b-[8px] border-b-[#ffe11f]"></div>
+      <div className="absolute w-0 h-0 left-[2px] right-[2px] bottom-[2px]
+        border-l-[12px] border-l-transparent 
+        border-r-[12px] border-r-transparent 
+        border-t-[8px] border-t-[#ffe11f]"></div>
     </div>
-    <div className="circle absolute z-[2] bg-[#1651b8] w-3 h-3 
-      top-1/2 left-1/2 -mt-1.5 -ml-1.5 rounded-full">
-      <div className="absolute w-3.5 h-1.5 bg-white 
-        top-1/2 left-1/2 -mt-[3px] -ml-[7px] 
-        transform rotate-[14deg] rounded-full"></div>
-      <div className="absolute w-3.5 h-1.5 bg-[#1651b8]
-        top-1/2 left-1/2 -mt-[2px] -ml-[7px]
-        transform rotate-[14deg] rounded-full"></div>
+    <div className="circle absolute z-[2] bg-[#1651b8] w-[10px] h-[10px] 
+      top-1/2 left-1/2 -mt-[5px] -ml-[5px] rounded-full overflow-hidden">
+      <div className="absolute w-[12px] h-[4px] bg-white 
+        top-1/2 left-1/2 -mt-[2.5px] -ml-[6px] 
+        transform rotate-[14deg] rounded-[50%]"></div>
+      <div className="absolute w-[12px] h-[4px] bg-[#1651b8]
+        top-1/2 left-1/2 -mt-[1.5px] -ml-[6px]
+        transform rotate-[14deg] rounded-[50%]"></div>
     </div>
   </div>
 );
 
 const USAFlag = () => (
-  <div className="usa-flag w-6 h-4 relative rounded-sm overflow-hidden">
-    <div className="absolute inset-0 bg-white">
-      <div className="absolute inset-0 bg-[repeating-linear-gradient(180deg,
-        #B22234 0%,
-        #B22234 7.69%,
-        white 7.69%,
-        white 15.38%)]"></div>
+  <div className="usa-flag w-7 h-5 relative bg-white rounded-sm overflow-hidden">
+    <div className="stripes absolute w-full h-full">
+      <div className="absolute inset-0 [background:repeating-linear-gradient(180deg,#B22234_0%,#B22234_7.69%,white_7.69%,white_15.38%)]"></div>
     </div>
-    <div className="absolute w-[36%] h-[54%] bg-[#002868] top-0 left-0 
+    <div className="union absolute w-[36%] h-[54%] bg-[#002868] top-0 left-0 
       flex items-center justify-center">
-      <span className="text-white text-[8px]">★</span>
+      <span className="text-white text-[2.5px] transform -translate-y-[0.5px]">★</span>
     </div>
   </div>
 );
