@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Novo Contato - Maranja</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #F5EFE7;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #1B3B5C;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        .content {
+            padding: 30px;
+        }
+        .field {
+            background-color: #EEE9DF;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        .field-label {
+            font-weight: bold;
+            color: #1B3B5C;
+            margin-bottom: 5px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #1B3B5C;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .button:hover {
+            background-color: #2d5a8a;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>Novo Formulário de Contato</h1>
+        </div>
+        <div class="content">
+            <p>Um novo formulário de contato foi recebido com os seguintes dados:</p>
+            
+            <div class="field">
+                <div class="field-label">Nome:</div>
+                <div>João Silva</div>
+            </div>
+            
+            <div class="field">
+                <div class="field-label">E-mail:</div>
+                <div>joao.silva@exemplo.com</div>
+            </div>
+            
+            <div class="field">
+                <div class="field-label">Telefone:</div>
+                <div>(11) 98765-4321</div>
+            </div>
+            
+            <div class="field">
+                <div class="field-label">Mensagem:</div>
+                <div>Olá, gostaria de saber mais informações sobre os serviços oferecidos.</div>
+            </div>
+            
+            <a href="https://maranja.com.br/admin" class="button">Ver no Dashboard</a>
+        </div>
+        <div class="footer">
+            <p>Esta é uma notificação automática do formulário de contato do site Maranja.</p>
+        </div>
+    </div>
+</body>
+</html> 
