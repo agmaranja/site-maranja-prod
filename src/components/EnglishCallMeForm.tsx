@@ -8,26 +8,26 @@ import { Phone, Mail } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Checkbox } from "@/components/ui/checkbox";
 
-const CallMeForm = () => {
+const EnglishCallMeForm = () => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    nome: "",
-    telefone: "",
+    name: "",
+    phone: "",
     email: "",
-    mensagem: "",
-    servicos: [] as string[]
+    message: "",
+    services: [] as string[]
   });
 
-  const servicosList = [
-    "Criação de Sites com IA",
-    "Automação de Agendamentos 24h com Agentes de I.A",
-    "Relatórios Inteligentes de Conversas",
-    "Pacote de Conteúdo para Redes Sociais",
-    "Gestão de CRM e Follow-Up Inteligente",
-    "Monitoramento de Reputação Online",
-    "Pacote de Tráfego Local Inteligente",
-    "Otimização de Presença Google (SEO Local)"
+  const servicesList = [
+    "AI-Powered Website Creation",
+    "24/7 AI Appointment Automation",
+    "Intelligent Conversation Reports",
+    "Social Media Content Package",
+    "CRM and Smart Follow-Up Management",
+    "Online Reputation Monitoring",
+    "Local Traffic Package",
+    "Google Presence Optimization (Local SEO)"
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -41,9 +41,9 @@ const CallMeForm = () => {
   const handleServiceChange = (service: string, checked: boolean) => {
     setFormData(prev => ({
       ...prev,
-      servicos: checked 
-        ? [...prev.servicos, service]
-        : prev.servicos.filter(s => s !== service)
+      services: checked 
+        ? [...prev.services, service]
+        : prev.services.filter(s => s !== service)
     }));
   };
 
@@ -52,16 +52,16 @@ const CallMeForm = () => {
     setLoading(true);
 
     try {
-      console.log("Dados do formulário sendo enviados:", formData);
+      console.log("Form data being sent:", formData);
       
       // Send form data to Supabase edge function to email recipients
       const { data, error } = await supabase.functions.invoke("send-contact-form", {
         body: {
-          nome: formData.nome,
-          telefone: formData.telefone,
+          nome: formData.name,
+          telefone: formData.phone,
           email: formData.email,
-          mensagem: formData.mensagem,
-          servicos: formData.servicos,
+          mensagem: formData.message,
+          servicos: formData.services,
           recipients: [
             "agmaranja@gmail.com", 
             "bmeduneckas@gmail.com", 
@@ -71,31 +71,31 @@ const CallMeForm = () => {
       });
 
       if (error) {
-        console.error("Erro na Edge Function:", error);
+        console.error("Edge Function error:", error);
         throw error;
       }
 
-      console.log("Resposta completa da Edge Function:", data);
+      console.log("Complete Edge Function response:", data);
 
       toast({
-        title: "Formulário enviado!",
-        description: "Entraremos em contato em breve.",
+        title: "Form submitted!",
+        description: "We'll contact you soon.",
         duration: 5000
       });
 
-      // Limpar formulário
+      // Clear form
       setFormData({
-        nome: "",
-        telefone: "",
+        name: "",
+        phone: "",
         email: "",
-        mensagem: "",
-        servicos: []
+        message: "",
+        services: []
       });
     } catch (error) {
-      console.error("Erro ao enviar formulário:", error);
+      console.error("Error sending form:", error);
       toast({
-        title: "Erro ao enviar formulário",
-        description: "Por favor, tente novamente mais tarde.",
+        title: "Error sending form",
+        description: "Please try again later.",
         variant: "destructive",
         duration: 5000
       });
@@ -104,15 +104,15 @@ const CallMeForm = () => {
     }
   };
 
-  return <section id="ligue-para-mim" className="py-20 md:py-28 bg-gradient-to-b from-maranja-beige to-maranja-cream relative">
+  return <section id="quote" className="py-20 md:py-28 bg-gradient-to-b from-maranja-beige to-maranja-cream relative">
       <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-maranja-darkblue mb-5">
-              Vamos conversar?
+              Contact Us
             </h2>
             <p className="text-maranja-darkblue/70 max-w-xl mx-auto">
-              Preencha seus dados que ligamos para você e explicamos como podemos ajudar sua clínica a crescer com mais tranquilidade.
+              Fill out the form below and we'll contact you to discuss how we can help your clinic.
             </p>
           </div>
           
@@ -120,36 +120,36 @@ const CallMeForm = () => {
             <form onSubmit={handleSubmit}>
               <div className="grid gap-8 mb-8">
                 <div className="grid gap-3">
-                  <Label htmlFor="nome" className="text-maranja-darkblue">
-                    Nome
+                  <Label htmlFor="name" className="text-maranja-darkblue">
+                    Name
                   </Label>
-                  <Input id="nome" name="nome" value={formData.nome} onChange={handleChange} placeholder="Seu nome completo" required className="border-maranja-darkblue/20 focus:border-maranja-darkblue focus:ring-maranja-darkblue" />
+                  <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Your full name" required className="border-maranja-darkblue/20 focus:border-maranja-darkblue focus:ring-maranja-darkblue" />
                 </div>
                 
                 <div className="grid gap-3">
-                  <Label htmlFor="telefone" className="text-maranja-darkblue">
-                    Telefone
+                  <Label htmlFor="phone" className="text-maranja-darkblue">
+                    Phone
                   </Label>
-                  <Input id="telefone" name="telefone" type="tel" value={formData.telefone} onChange={handleChange} placeholder="(00) 00000-0000" required className="border-maranja-darkblue/20 focus:border-maranja-darkblue focus:ring-maranja-darkblue" />
+                  <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="(00) 00000-0000" required className="border-maranja-darkblue/20 focus:border-maranja-darkblue focus:ring-maranja-darkblue" />
                 </div>
                 
                 <div className="grid gap-3">
                   <Label htmlFor="email" className="text-maranja-darkblue">
-                    E-mail
+                    Email
                   </Label>
-                  <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="seu@email.com" required className="border-maranja-darkblue/20 focus:border-maranja-darkblue focus:ring-maranja-darkblue" />
+                  <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" required className="border-maranja-darkblue/20 focus:border-maranja-darkblue focus:ring-maranja-darkblue" />
                 </div>
 
                 <div className="grid gap-3">
                   <Label className="text-maranja-darkblue">
-                    Quais serviços você tem interesse? (opcional)
+                    Which services are you interested in? (optional)
                   </Label>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {servicosList.map((service) => (
+                    {servicesList.map((service) => (
                       <div key={service} className="flex items-center space-x-2">
                         <Checkbox
                           id={`service-${service}`}
-                          checked={formData.servicos.includes(service)}
+                          checked={formData.services.includes(service)}
                           onCheckedChange={(checked) => handleServiceChange(service, checked as boolean)}
                           className="border-maranja-darkblue/20 data-[state=checked]:bg-maranja-darkblue data-[state=checked]:text-white"
                         />
@@ -165,15 +165,15 @@ const CallMeForm = () => {
                 </div>
                 
                 <div className="grid gap-3">
-                  <Label htmlFor="mensagem" className="text-maranja-darkblue">
-                    Mensagem (opcional)
+                  <Label htmlFor="message" className="text-maranja-darkblue">
+                    Message (optional)
                   </Label>
-                  <Textarea id="mensagem" name="mensagem" value={formData.mensagem} onChange={handleChange} placeholder="Como podemos ajudar a sua clínica?" className="min-h-[120px] border-maranja-darkblue/20 focus:border-maranja-darkblue focus:ring-maranja-darkblue" />
+                  <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="How can we help your clinic?" className="min-h-[120px] border-maranja-darkblue/20 focus:border-maranja-darkblue focus:ring-maranja-darkblue" />
                 </div>
               </div>
               
               <Button type="submit" className="w-full bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white" disabled={loading}>
-                {loading ? "Enviando..." : "Solicitar contato"}
+                {loading ? "Sending..." : "Request contact"}
               </Button>
             </form>
             
@@ -195,4 +195,4 @@ const CallMeForm = () => {
     </section>;
 };
 
-export default CallMeForm;
+export default EnglishCallMeForm; 

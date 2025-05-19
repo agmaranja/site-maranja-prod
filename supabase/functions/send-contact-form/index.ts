@@ -6,6 +6,7 @@ interface ContactFormRequest {
   telefone: string;
   email: string;
   mensagem?: string;
+  servicos?: string[];
   recipients?: string[];
 }
 
@@ -100,6 +101,17 @@ function generateEmailTemplate(data: ContactFormRequest): string {
           border-radius: 4px;
           box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
         }
+        .services-list {
+          list-style: none;
+          padding: 0;
+        }
+        .services-list li {
+          padding: 8px 12px;
+          margin-bottom: 4px;
+          background-color: #EEE9DF;
+          border-radius: 4px;
+          color: #333333;
+        }
         .footer {
           text-align: center;
           padding: 20px;
@@ -125,6 +137,14 @@ function generateEmailTemplate(data: ContactFormRequest): string {
           <div class="field">
             <div class="field-label">E-mail</div>
             <div class="field-value">${data.email}</div>
+          </div>
+          <div class="field">
+            <div class="field-label">Serviços de Interesse</div>
+            <div class="field-value">
+              ${data.servicos && data.servicos.length > 0 
+                ? `<ul class="services-list">${data.servicos.map(service => `<li>${service}</li>`).join('')}</ul>`
+                : "Nenhum serviço selecionado"}
+            </div>
           </div>
           <div class="field">
             <div class="field-label">Mensagem</div>
@@ -184,6 +204,18 @@ function generateConfirmationTemplate(data: ContactFormRequest): string {
           box-shadow: 0 2px 4px rgba(0,0,0,0.1);
           color: #1B3B5C;
         }
+        .services-list {
+          list-style: none;
+          padding: 0;
+          margin: 20px 0;
+        }
+        .services-list li {
+          padding: 8px 12px;
+          margin-bottom: 4px;
+          background-color: #EEE9DF;
+          border-radius: 4px;
+          color: #333333;
+        }
         .button {
           background-color: #1B3B5C;
           color: white;
@@ -209,18 +241,24 @@ function generateConfirmationTemplate(data: ContactFormRequest): string {
     <body>
       <div class="container">
         <div class="header">
-          <h1>Recebemos seu contato</h1>
+          <h1>Recebemos seu contato!</h1>
         </div>
         <div class="content">
-          <h2 style="color: #1B3B5C; margin-bottom: 20px;">Olá ${data.nome},</h2>
-          <p>Agradecemos seu contato! Recebemos sua mensagem com sucesso.</p>
-          <p>Nossa equipe analisará sua solicitação e retornaremos em breve.</p>
-          <p>Enquanto isso, você pode conhecer mais sobre nossos serviços em nosso site:</p>
-          <p style="text-align: center;">
-            <a href="https://maranja.com.br" class="button">Visitar Site</a>
-          </p>
+          <p>Olá ${data.nome},</p>
+          <p>Obrigado por entrar em contato com a Maranja. Recebemos sua mensagem e em breve entraremos em contato para discutir como podemos ajudar sua clínica.</p>
+          
+          ${data.servicos && data.servicos.length > 0 ? `
+          <p>Serviços de seu interesse:</p>
+          <ul class="services-list">
+            ${data.servicos.map(service => `<li>${service}</li>`).join('')}
+          </ul>
+          ` : ''}
+          
+          <p>Enquanto isso, você pode conhecer mais sobre nossos serviços visitando nosso site.</p>
+          <a href="https://maranja.com.br" class="button">Visitar Site</a>
         </div>
         <div class="footer">
+          <p>Este e-mail foi enviado automaticamente pelo site da Maranja.</p>
           <p>© ${new Date().getFullYear()} Maranja. Todos os direitos reservados.</p>
         </div>
       </div>

@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -76,7 +75,7 @@ export default {
 			},
 			fontFamily: {
 				sans: ['Montserrat', 'sans-serif'],
-				heading: ['Cormorant Garamond', 'serif']
+				heading: ['Lora', 'serif']
 			},
 			keyframes: {
 				'accordion-down': {

@@ -1,24 +1,43 @@
-
-import React from "react";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const WhatsAppButton = () => {
-  const handleWhatsAppClick = () => {
-    // Updated WhatsApp number
-    window.open("https://wa.me/5511982404879", "_blank");
+  const [isEnglish, setIsEnglish] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsEnglish(location.pathname.includes("/en"));
+  }, [location]);
+
+  const config = {
+    accountName: "Agência Maranjá",
+    avatar: "/lovable-uploads/781fb56a-1cb8-4504-844e-774d19f133c1.png",
+    statusMessage: isEnglish ? "Typically replies within 1 hour" : "Normalmente responde em até 1 hora",
+    chatMessage: isEnglish ? "Hello! How can we help you?" : "Olá, como podemos te ajudar?",
+    placeholder: isEnglish ? "Type a message..." : "Digite uma mensagem..."
   };
-  
+
   return (
-    <button 
-      onClick={handleWhatsAppClick} 
-      className="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-700 text-white rounded-full p-5 shadow-lg transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" 
-      aria-label="Contato via WhatsApp"
-    >
-      <img 
-        alt="WhatsApp" 
-        className="h-8 w-8" 
-        src="/lovable-uploads/6b79a134-3586-42ea-a93c-3af7a63c804e.png" 
-      />
-    </button>
+    <FloatingWhatsApp
+      phoneNumber="5511982404879"
+      accountName={config.accountName}
+      allowEsc
+      allowClickAway
+      notification
+      notificationSound
+      statusMessage={config.statusMessage}
+      chatMessage={config.chatMessage}
+      avatar={config.avatar}
+      buttonStyle={{
+        backgroundColor: "#25D366",
+        color: "white",
+      }}
+      buttonClassName="!bg-[#25D366] hover:!bg-[#128C7E] !w-[75px] !h-[75px] !p-0 !flex !items-center !justify-center"
+      messageDelay={0}
+      placeholder={config.placeholder}
+      darkMode={false}
+    />
   );
 };
 

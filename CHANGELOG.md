@@ -28,4 +28,15 @@
 - Resolvido problema de 404 em recursos estáticos
 - Corrigido carregamento de assets no domínio personalizado
 - Ajustado Mixed Content warning para HTTPS
-- Otimizado carregamento de imagens e recursos 
+- Otimizado carregamento de imagens e recursos
+
+## [Data de hoje] - Atualizações
+
+- Adicionado checklist de serviços nos formulários (português e inglês)
+- Atualizado templates de email para incluir serviços selecionados (equipe e cliente)
+- Corrigido e atualizado configuração do PostCSS para compatibilidade com Tailwind e Vite
+- Ajustado fontes: títulos e cards agora usam Lora Regular (400)
+- Melhorias visuais nos cards de serviços (tamanhos, cores, suavidade)
+- Ajustes de layout e responsividade em seções principais
+- Corrigido botão do WhatsApp (tamanho, logo, idioma)
+- Build de produção gerado para deploy 

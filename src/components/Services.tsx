@@ -128,10 +128,10 @@ const Services = () => {
     <section id="servicos" className="py-16 md:py-24 bg-maranja-cream">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-maranja-darkblue mb-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-maranja-darkblue mb-6">
             Nossos Serviços
           </h2>
-          <p className="text-maranja-darkblue/80 max-w-3xl mx-auto text-lg md:text-xl">
+          <p className="text-maranja-darkblue/70 max-w-3xl mx-auto text-base md:text-lg">
             Soluções completas para impulsionar sua clínica com tecnologias modernas e processos eficientes.
           </p>
         </div>
@@ -154,12 +154,14 @@ const Services = () => {
                     } transition-opacity duration-300 rounded-lg border border-maranja-darkblue/10 bg-white/90 backdrop-blur-sm hover:shadow-md`}
                     style={{ backfaceVisibility: "hidden" }}
                   >
-                    <Card className="h-full border-none shadow-none bg-transparent flex flex-col items-center justify-center text-center p-6">
-                      <div className="w-16 h-16 bg-maranja-beige rounded-full flex items-center justify-center mb-6 text-maranja-darkblue">
-                        {service.icon}
+                    <Card className="h-full border-none shadow-none bg-transparent flex flex-col items-center justify-center text-center p-8">
+                      <div className="w-20 h-20 bg-maranja-beige rounded-full flex items-center justify-center mb-8">
+                        <div className="w-10 h-10 text-[#a58c6b]">
+                          {service.icon}
+                        </div>
                       </div>
-                      <CardTitle className="text-maranja-darkblue text-2xl">{service.title}</CardTitle>
-                      <p className="mt-4 text-sm text-maranja-darkblue/60 font-medium">
+                      <CardTitle className="text-maranja-darkblue text-2xl mb-4">{service.title}</CardTitle>
+                      <p className="mt-2 text-sm text-maranja-darkblue/50 font-medium">
                         Clique para saber mais
                       </p>
                     </Card>
@@ -175,25 +177,11 @@ const Services = () => {
                       transform: "rotateY(180deg)",
                     }}
                   >
-                    <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                    {service.id === 9 ? (
-                      <>
-                        <p className="text-white/90 text-base">
-                          Integramos nossas soluções com:
-                        </p>
-                        <ul className="list-disc pl-5 mt-2 space-y-1 text-white/90 text-base">
-                          <li>Prontuários eletrônicos</li>
-                          <li>Sistemas de faturamento</li>
-                          <li>Softwares de gestão</li>
-                          <li>APIs de terceiros</li>
-                        </ul>
-                      </>
-                    ) : (
-                      <p className="text-white/90 text-base">
-                        {service.description}
-                      </p>
-                    )}
-                    <p className="mt-4 text-sm italic text-white/70">Clique para voltar</p>
+                    <h3 className="text-2xl font-bold mb-6">{service.title}</h3>
+                    <p className="text-white/80 text-lg">
+                      {service.description}
+                    </p>
+                    <p className="mt-6 text-sm italic text-white/60">Clique para voltar</p>
                   </div>
                 </motion.div>
               </div>
@@ -219,11 +207,13 @@ const Services = () => {
                     style={{ backfaceVisibility: "hidden" }}
                   >
                     <Card className="h-full border-none shadow-none bg-transparent flex flex-col items-center justify-center text-center p-6">
-                      <div className="w-16 h-16 bg-maranja-beige rounded-full flex items-center justify-center mb-6 text-maranja-darkblue">
-                        {service.icon}
+                      <div className="w-16 h-16 bg-maranja-beige rounded-full flex items-center justify-center mb-6">
+                        <div className="w-8 h-8 text-[#a58c6b]">
+                          {service.icon}
+                        </div>
                       </div>
-                      <CardTitle className="text-maranja-darkblue text-2xl">{service.title}</CardTitle>
-                      <p className="mt-4 text-sm text-maranja-darkblue/60 font-medium">
+                      <CardTitle className="text-maranja-darkblue text-xl">{service.title}</CardTitle>
+                      <p className="mt-4 text-sm text-maranja-darkblue/50 font-medium">
                         Clique para saber mais
                       </p>
                     </Card>
@@ -239,11 +229,11 @@ const Services = () => {
                       transform: "rotateY(180deg)",
                     }}
                   >
-                    <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                    <p className="text-white/90 text-base">
+                    <h3 className="text-xl font-bold mb-4">{service.title}</h3>
+                    <p className="text-white/80 text-base">
                       {service.description}
                     </p>
-                    <p className="mt-4 text-sm italic text-white/70">Clique para voltar</p>
+                    <p className="mt-4 text-sm italic text-white/60">Clique para voltar</p>
                   </div>
                 </motion.div>
               </div>

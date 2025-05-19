@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Flag } from "lucide-react";
 import { 
   DropdownMenu,
@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger 
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 type Language = "pt-BR" | "en-US";
 
@@ -49,17 +49,28 @@ const USAFlag = () => (
 
 const LanguageSelector = () => {
   const navigate = useNavigate();
-  const currentPath = window.location.pathname;
-  const isEnglish = currentPath.includes("/en");
-  const [currentLanguage, setCurrentLanguage] = useState<Language>(isEnglish ? "en-US" : "pt-BR");
+  const location = useLocation();
+  const [currentLanguage, setCurrentLanguage] = useState<Language>("pt-BR");
+
+  useEffect(() => {
+    setCurrentLanguage(location.pathname.includes("/en") ? "en-US" : "pt-BR");
+  }, [location.pathname]);
 
   const handleLanguageChange = (language: Language) => {
     setCurrentLanguage(language);
     
-    if (language === "en-US" && !isEnglish) {
-      navigate("/en");
-    } else if (language === "pt-BR" && isEnglish) {
-      navigate("/");
+    // Get the current path without any language prefix
+    const pathWithoutLang = location.pathname.replace(/^\/en/, '');
+    
+    // Get the current hash if it exists
+    const hash = location.hash;
+    
+    if (language === "en-US" && !location.pathname.includes("/en")) {
+      // Navigate to English version
+      navigate(`/en${pathWithoutLang}${hash}`);
+    } else if (language === "pt-BR" && location.pathname.includes("/en")) {
+      // Navigate to Portuguese version
+      navigate(`${pathWithoutLang}${hash}`);
     }
   };
 

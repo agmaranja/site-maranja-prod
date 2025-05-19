@@ -1,9 +1,15 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 const EnglishFooter = () => {
   const currentYear = new Date().getFullYear();
+  
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   
   return (
     <footer id="contato" className="bg-maranja-darkblue text-white py-16 md:py-20 relative">
@@ -37,10 +43,22 @@ const EnglishFooter = () => {
             <div>
               <h3 className="text-lg font-semibold mb-5">Services</h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-white/70 hover:text-white">Websites</a></li>
-                <li><a href="#" className="text-white/70 hover:text-white">Automation</a></li>
-                <li><a href="#" className="text-white/70 hover:text-white">Queue Management</a></li>
-                <li><a href="#" className="text-white/70 hover:text-white">Scheduling</a></li>
+                <li><a href="#services" className="text-white/70 hover:text-white" onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("services");
+                }}>Websites</a></li>
+                <li><a href="#services" className="text-white/70 hover:text-white" onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("services");
+                }}>Automation</a></li>
+                <li><a href="#services" className="text-white/70 hover:text-white" onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("services");
+                }}>Queue Management</a></li>
+                <li><a href="#services" className="text-white/70 hover:text-white" onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("services");
+                }}>Scheduling</a></li>
               </ul>
             </div>
             

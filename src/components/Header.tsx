@@ -1,15 +1,27 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import LanguageSelector from "@/components/LanguageSelector";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isEnglish, setIsEnglish] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsEnglish(location.pathname.includes("/en"));
+  }, [location.pathname]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   
-  const isEnglish = window.location.pathname.includes("/en");
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return <header className="sticky top-0 z-50 bg-maranja-beige/95 backdrop-blur-sm py-4 border-b border-maranja-darkblue/10 relative">
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -18,10 +30,10 @@ const Header = () => {
           <img alt="Maranjá Logo" className="h-12 md:h-14" src="/lovable-uploads/b30ea72c-a074-4b0e-bd99-44b4f833ac99.png" />
           {/* Separate Maranjá text with premium styling */}
           <div className="ml-4 hidden md:block">
-            <h1 className="text-2xl font-bold text-maranja-darkblue tracking-wider">
+            <h1 className="text-xl font-bold text-maranja-darkblue tracking-wider">
               MARANJÁ
             </h1>
-            <p className="text-xs uppercase tracking-widest text-maranja-darkblue/70">
+            <p className="text-[10px] uppercase tracking-widest text-maranja-darkblue/60">
               {isEnglish ? "MARKETING AND AUTOMATION" : "MARKETING E AUTOMAÇÃO"}
             </p>
           </div>
@@ -29,19 +41,41 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href={isEnglish ? "#home" : "#inicio"} className="text-maranja-darkblue hover:text-maranja-darkblue/80 font-medium">
+          <a 
+            href={`#${isEnglish ? "home" : "inicio"}`} 
+            className="text-maranja-darkblue hover:text-maranja-darkblue/80 font-medium" 
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(isEnglish ? "home" : "inicio");
+            }}
+          >
             {isEnglish ? "Home" : "Início"}
           </a>
-          <a href="#servicos" className="text-maranja-darkblue hover:text-maranja-darkblue/80 font-medium">
+          <a 
+            href={`#${isEnglish ? "services" : "servicos"}`} 
+            className="text-maranja-darkblue hover:text-maranja-darkblue/80 font-medium" 
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(isEnglish ? "services" : "servicos");
+            }}
+          >
             {isEnglish ? "Services" : "Serviços"}
           </a>
-          <a href="#contato" className="text-maranja-darkblue hover:text-maranja-darkblue/80 font-medium">
+          <a 
+            href={`#${isEnglish ? "contact" : "contato"}`} 
+            className="text-maranja-darkblue hover:text-maranja-darkblue/80 font-medium" 
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(isEnglish ? "contact" : "contato");
+            }}
+          >
             {isEnglish ? "Contact" : "Contato"}
           </a>
-          <Button className="bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white" onClick={() => document.getElementById("ligue-para-mim")?.scrollIntoView({
-          behavior: "smooth"
-        })}>
-            {isEnglish ? "Call me" : "Ligue para mim"}
+          <Button 
+            className="bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white" 
+            onClick={() => scrollToSection(isEnglish ? "quote" : "ligue-para-mim")}
+          >
+            {isEnglish ? "Get a Quote" : "Orçamento"}
           </Button>
           <LanguageSelector />
         </nav>
@@ -50,7 +84,7 @@ const Header = () => {
         <div className="flex items-center md:hidden">
           {/* Show Maranjá text on mobile too */}
           <div className="mr-4">
-            <h1 className="text-xl font-bold text-maranja-darkblue">MARANJÁ</h1>
+            <h1 className="text-lg font-bold text-maranja-darkblue">MARANJÁ</h1>
           </div>
           <LanguageSelector />
           <button onClick={toggleMenu} className="text-maranja-darkblue ml-2">
@@ -64,22 +98,47 @@ const Header = () => {
       {/* Mobile Navigation */}
       {isMenuOpen && <div className="md:hidden absolute top-full left-0 w-full bg-maranja-beige shadow-md py-4 px-4 border-t border-maranja-darkblue/10 z-50">
           <nav className="flex flex-col space-y-4">
-            <a href={isEnglish ? "#home" : "#inicio"} className="text-maranja-darkblue py-2 px-4 hover:bg-maranja-cream rounded-md" onClick={toggleMenu}>
+            <a 
+              href={`#${isEnglish ? "home" : "inicio"}`} 
+              className="text-maranja-darkblue py-2 px-4 hover:bg-maranja-cream rounded-md" 
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(isEnglish ? "home" : "inicio");
+                toggleMenu();
+              }}
+            >
               {isEnglish ? "Home" : "Início"}
             </a>
-            <a href="#servicos" className="text-maranja-darkblue py-2 px-4 hover:bg-maranja-cream rounded-md" onClick={toggleMenu}>
+            <a 
+              href={`#${isEnglish ? "services" : "servicos"}`} 
+              className="text-maranja-darkblue py-2 px-4 hover:bg-maranja-cream rounded-md" 
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(isEnglish ? "services" : "servicos");
+                toggleMenu();
+              }}
+            >
               {isEnglish ? "Services" : "Serviços"}
             </a>
-            <a href="#contato" className="text-maranja-darkblue py-2 px-4 hover:bg-maranja-cream rounded-md" onClick={toggleMenu}>
+            <a 
+              href={`#${isEnglish ? "contact" : "contato"}`} 
+              className="text-maranja-darkblue py-2 px-4 hover:bg-maranja-cream rounded-md" 
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(isEnglish ? "contact" : "contato");
+                toggleMenu();
+              }}
+            >
               {isEnglish ? "Contact" : "Contato"}
             </a>
-            <Button className="bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white w-full justify-center" onClick={() => {
-          toggleMenu();
-          document.getElementById("ligue-para-mim")?.scrollIntoView({
-            behavior: "smooth"
-          });
-        }}>
-              {isEnglish ? "Call me" : "Ligue para mim"}
+            <Button 
+              className="bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white w-full justify-center" 
+              onClick={() => {
+                scrollToSection(isEnglish ? "quote" : "ligue-para-mim");
+                toggleMenu();
+              }}
+            >
+              {isEnglish ? "Get a Quote" : "Orçamento"}
             </Button>
           </nav>
         </div>}

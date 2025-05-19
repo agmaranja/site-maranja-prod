@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
@@ -88,10 +87,10 @@ const EnglishServices = () => {
     <section id="services" className="py-16 md:py-24 bg-maranja-cream">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-maranja-darkblue mb-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-maranja-darkblue mb-6">
             Our Services
           </h2>
-          <p className="text-maranja-darkblue/80 max-w-3xl mx-auto text-lg md:text-xl">
+          <p className="text-maranja-darkblue/70 max-w-3xl mx-auto text-base md:text-lg">
             Complete solutions to boost your clinic with modern technologies and efficient processes.
           </p>
         </div>
@@ -122,11 +121,13 @@ const EnglishServices = () => {
                   }}
                 >
                   <Card className="h-full border-none shadow-none bg-transparent flex flex-col items-center justify-center text-center p-6">
-                    <div className="w-16 h-16 bg-maranja-beige rounded-full flex items-center justify-center mb-6 text-maranja-darkblue">
-                      {service.icon}
+                    <div className="w-16 h-16 bg-maranja-beige rounded-full flex items-center justify-center mb-6">
+                      <div className="w-8 h-8 text-[#a58c6b]">
+                        {service.icon}
+                      </div>
                     </div>
-                    <CardTitle className="text-maranja-darkblue text-2xl">{service.title}</CardTitle>
-                    <p className="mt-4 text-sm text-maranja-darkblue/60 font-medium">
+                    <CardTitle className="text-maranja-darkblue text-xl">{service.title}</CardTitle>
+                    <p className="mt-4 text-sm text-maranja-darkblue/50 font-medium">
                       Click to learn more
                     </p>
                   </Card>
@@ -142,8 +143,8 @@ const EnglishServices = () => {
                     transform: "rotateY(180deg)"
                   }}
                 >
-                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                  <p className="text-white/90 text-base">
+                  <h3 className="text-xl font-bold mb-4">{service.title}</h3>
+                  <p className="text-white/80 text-base">
                     {service.id === 9 ? (
                       <>
                         We integrate our solutions with:
@@ -158,7 +159,7 @@ const EnglishServices = () => {
                       service.description
                     )}
                   </p>
-                  <p className="mt-4 text-sm italic text-white/70">Click to go back</p>
+                  <p className="mt-4 text-sm italic text-white/60">Click to go back</p>
                 </div>
               </motion.div>
             </div>

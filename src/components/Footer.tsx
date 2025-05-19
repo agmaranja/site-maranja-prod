@@ -33,10 +33,22 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-semibold mb-5">Serviços</h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-white/70 hover:text-white">Websites</a></li>
-                <li><a href="#" className="text-white/70 hover:text-white">Automação</a></li>
-                <li><a href="#" className="text-white/70 hover:text-white">Gestão de Filas</a></li>
-                <li><a href="#" className="text-white/70 hover:text-white">Agendamento</a></li>
+                <li><a href="#servicos" className="text-white/70 hover:text-white" onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("servicos")?.scrollIntoView({ behavior: "smooth" });
+                }}>Websites</a></li>
+                <li><a href="#servicos" className="text-white/70 hover:text-white" onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("servicos")?.scrollIntoView({ behavior: "smooth" });
+                }}>Automação</a></li>
+                <li><a href="#servicos" className="text-white/70 hover:text-white" onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("servicos")?.scrollIntoView({ behavior: "smooth" });
+                }}>Gestão de Filas</a></li>
+                <li><a href="#servicos" className="text-white/70 hover:text-white" onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("servicos")?.scrollIntoView({ behavior: "smooth" });
+                }}>Agendamentos</a></li>
               </ul>
             </div>
             

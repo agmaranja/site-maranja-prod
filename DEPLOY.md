@@ -104,4 +104,12 @@ git push
 - Sempre use HashRouter em vez de BrowserRouter para compatibilidade
 - Mantenha o CNAME tanto em public/ quanto em docs/
 - Use caminhos relativos para recursos estáticos
-- Aguarde a propagação do DNS após alterações (até 24h) 
+- Aguarde a propagação do DNS após alterações (até 24h)
+
+# Deploy - [Data de hoje]
+
+- Build de produção gerado com `npm run build`
+- Commit e push realizados para o repositório do GitHub
+- Deploy automático via GitHub Pages (pasta /docs)
+- Verificar publicação em: https://<seu-usuario>.github.io/<seu-repo>/
+- Certifique-se de que a branch está correta e a pasta /docs está selecionada nas configurações do Pages 

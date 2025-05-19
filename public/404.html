@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // List of old URLs and their new destinations
+      const redirects = {
+        '/sobre-nos': '/',
+        '/about-us': '/en'
+      };
+
+      // Get the current path
+      const path = window.location.pathname;
+      
+      // Check if we have a redirect for this path
+      if (redirects[path]) {
+        // Redirect to the new URL
+        window.location.href = redirects[path];
+      } else {
+        // If no redirect is found, go to the main page
+        window.location.href = '/';
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html> 

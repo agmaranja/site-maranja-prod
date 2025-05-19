@@ -15,11 +15,11 @@ const Hero = () => {
           <div className="w-full md:w-1/2 mb-12 md:mb-0 md:pr-8">
             
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-maranja-darkblue leading-tight">
-              Marketing e automação para <span className="text-transparent bg-clip-text bg-gradient-to-r from-maranja-darkblue to-maranja-darkblue/70">clínicas</span>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-maranja-darkblue leading-tight">
+              Marketing e automação para <span className="text-transparent bg-clip-text bg-gradient-to-r from-maranja-darkblue/90 to-maranja-darkblue/60">clínicas</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-maranja-darkblue/80 mb-8 max-w-lg">
+            <p className="text-base md:text-lg text-maranja-darkblue/70 mb-8 max-w-lg">
               Potencialize sua clínica com soluções completas de marketing e automação. 
               Atraia mais pacientes e ofereça uma experiência superior.
             </p>
