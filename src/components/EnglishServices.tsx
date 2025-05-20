@@ -83,6 +83,10 @@ const EnglishServices = () => {
     }
   };
 
+  const handleWhatsAppClick = () => {
+    window.open("https://wa.me/5511982404879", "_blank");
+  };
+
   return (
     <section id="services" className="py-16 md:py-24 bg-maranja-cream">
       <div className="container mx-auto px-4">
@@ -121,8 +125,8 @@ const EnglishServices = () => {
                   }}
                 >
                   <Card className="h-full border-none shadow-none bg-transparent flex flex-col items-center justify-center text-center p-6">
-                    <div className="w-16 h-16 bg-maranja-beige rounded-full flex items-center justify-center mb-6">
-                      <div className="w-8 h-8 text-[#a58c6b]">
+                    <div className="w-20 h-20 bg-maranja-beige rounded-full flex items-center justify-center mb-8">
+                      <div className="w-10 h-10 text-[#a58c6b] flex items-center justify-center">
                         {service.icon}
                       </div>
                     </div>
@@ -244,9 +248,14 @@ const EnglishServices = () => {
                   </div>
                   
                   <div className="mt-4 text-center">
-                    <Button variant="outline" className="border-white text-white hover:bg-white/20 text-sm">
-                      Request a Demo
-                    </Button>
+                    <div className="relative inline-block">
+                      <Button 
+                        className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background h-11 rounded-md px-8 border-maranja-darkblue text-maranja-darkblue hover:bg-maranja-darkblue hover:text-white"
+                        onClick={handleWhatsAppClick}
+                      >
+                        Request a Demo
+                      </Button>
+                    </div>
                   </div>
                   
                   <p className="mt-3 text-xs italic text-center text-white/70">Click to go back</p>

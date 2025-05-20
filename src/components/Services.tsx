@@ -156,7 +156,7 @@ const Services = () => {
                   >
                     <Card className="h-full border-none shadow-none bg-transparent flex flex-col items-center justify-center text-center p-8">
                       <div className="w-20 h-20 bg-maranja-beige rounded-full flex items-center justify-center mb-8">
-                        <div className="w-10 h-10 text-[#a58c6b]">
+                        <div className="w-10 h-10 text-[#a58c6b] flex items-center justify-center">
                           {service.icon}
                         </div>
                       </div>
@@ -208,7 +208,7 @@ const Services = () => {
                   >
                     <Card className="h-full border-none shadow-none bg-transparent flex flex-col items-center justify-center text-center p-6">
                       <div className="w-16 h-16 bg-maranja-beige rounded-full flex items-center justify-center mb-6">
-                        <div className="w-8 h-8 text-[#a58c6b]">
+                        <div className="w-8 h-8 text-[#a58c6b] flex items-center justify-center">
                           {service.icon}
                         </div>
                       </div>

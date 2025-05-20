@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.1] - 2024-03-19
+
+### Correções de UI
+- Corrigida centralização dos ícones nos cards de serviços
+- Ajustado tamanho e alinhamento dos containers de ícones (w-20 h-20)
+- Padronizado estilo dos botões de demonstração entre versões PT/EN
+- Melhorada consistência visual dos cards de serviços
+
+### Melhorias Técnicas
+- Otimizado build de produção
+- Atualizado PostCSS config para melhor compatibilidade
+- Ajustado tamanho dos chunks no build
+
 ## [1.0.0] - 2024-01-17 20:30
 
 ### Configuração Inicial do Deploy
