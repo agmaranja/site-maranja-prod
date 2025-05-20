@@ -33,7 +33,7 @@ const Header = () => {
             <h1 className="text-xl font-bold text-maranja-darkblue tracking-wider">
               MARANJÁ
             </h1>
-            <p className="text-[10px] uppercase tracking-widest text-maranja-darkblue/60">
+            <p className="text-[10px] uppercase tracking-widest text-maranja-darkblue/60 font-medium">
               {isEnglish ? "MARKETING AND AUTOMATION" : "MARKETING E AUTOMAÇÃO"}
             </p>
           </div>
@@ -43,7 +43,7 @@ const Header = () => {
         <nav className="hidden md:flex items-center space-x-8">
           <a 
             href={`#${isEnglish ? "home" : "inicio"}`} 
-            className="text-maranja-darkblue hover:text-maranja-darkblue/80 font-medium" 
+            className="text-maranja-darkblue hover:text-maranja-darkblue/80 font-medium text-sm" 
             onClick={(e) => {
               e.preventDefault();
               scrollToSection(isEnglish ? "home" : "inicio");
@@ -53,7 +53,7 @@ const Header = () => {
           </a>
           <a 
             href={`#${isEnglish ? "services" : "servicos"}`} 
-            className="text-maranja-darkblue hover:text-maranja-darkblue/80 font-medium" 
+            className="text-maranja-darkblue hover:text-maranja-darkblue/80 font-medium text-sm" 
             onClick={(e) => {
               e.preventDefault();
               scrollToSection(isEnglish ? "services" : "servicos");
@@ -63,7 +63,7 @@ const Header = () => {
           </a>
           <a 
             href={`#${isEnglish ? "contact" : "contato"}`} 
-            className="text-maranja-darkblue hover:text-maranja-darkblue/80 font-medium" 
+            className="text-maranja-darkblue hover:text-maranja-darkblue/80 font-medium text-sm" 
             onClick={(e) => {
               e.preventDefault();
               scrollToSection(isEnglish ? "contact" : "contato");

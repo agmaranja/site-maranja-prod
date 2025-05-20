@@ -1,13 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return <footer id="contato" className="bg-maranja-darkblue text-white py-16 md:py-20 relative">
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between pb-10 border-b border-white/20">
           <div className="mb-10 md:mb-0">
             <img src="/lovable-uploads/df2623b6-6fdc-4547-bd83-34b9b7cb6718.png" alt="Maranjá" className="h-16 mb-6 invert" />
-            <p className="max-w-xs text-white/70 mb-8">
+            <p className="max-w-xs text-white/70 mb-8 text-sm">
               Soluções de marketing e automação para clínicas que desejam crescer e otimizar processos.
             </p>
             <div className="flex space-x-5">
@@ -33,32 +39,32 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-semibold mb-5">Serviços</h3>
               <ul className="space-y-3">
-                <li><a href="#servicos" className="text-white/70 hover:text-white" onClick={(e) => {
+                <li><a href="#servicos" className="text-white/70 hover:text-white text-sm" onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById("servicos")?.scrollIntoView({ behavior: "smooth" });
+                  scrollToSection("servicos");
                 }}>Websites</a></li>
-                <li><a href="#servicos" className="text-white/70 hover:text-white" onClick={(e) => {
+                <li><a href="#servicos" className="text-white/70 hover:text-white text-sm" onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById("servicos")?.scrollIntoView({ behavior: "smooth" });
+                  scrollToSection("servicos");
                 }}>Automação</a></li>
-                <li><a href="#servicos" className="text-white/70 hover:text-white" onClick={(e) => {
+                <li><a href="#servicos" className="text-white/70 hover:text-white text-sm" onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById("servicos")?.scrollIntoView({ behavior: "smooth" });
+                  scrollToSection("servicos");
                 }}>Gestão de Filas</a></li>
-                <li><a href="#servicos" className="text-white/70 hover:text-white" onClick={(e) => {
+                <li><a href="#servicos" className="text-white/70 hover:text-white text-sm" onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById("servicos")?.scrollIntoView({ behavior: "smooth" });
-                }}>Agendamentos</a></li>
+                  scrollToSection("servicos");
+                }}>Agendamento</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="text-lg font-semibold mb-5">Empresa</h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-white/70 hover:text-white">Sobre nós</a></li>
-                <li><a href="#" className="text-white/70 hover:text-white">Clientes</a></li>
-                <li><a href="#" className="text-white/70 hover:text-white">Depoimentos</a></li>
-                <li><a href="#" className="text-white/70 hover:text-white">Blog</a></li>
+                <li><a href="#" className="text-white/70 hover:text-white text-sm">Sobre Nós</a></li>
+                <li><a href="#" className="text-white/70 hover:text-white text-sm">Clientes</a></li>
+                <li><a href="#" className="text-white/70 hover:text-white text-sm">Depoimentos</a></li>
+                <li><a href="#" className="text-white/70 hover:text-white text-sm">Blog</a></li>
               </ul>
             </div>
             

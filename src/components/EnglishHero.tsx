@@ -16,11 +16,11 @@ const EnglishHero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center md:justify-between">
           <div className="w-full md:w-1/2 mb-12 md:mb-0 md:pr-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-maranja-darkblue leading-tight">
-              Marketing and automation for <span className="text-transparent bg-clip-text bg-gradient-to-r from-maranja-darkblue to-maranja-darkblue/70">clinics</span>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-maranja-darkblue leading-tight">
+              Marketing and automation for <span className="text-transparent bg-clip-text bg-gradient-to-r from-maranja-darkblue/90 to-maranja-darkblue/60">clinics</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-maranja-darkblue/80 mb-8 max-w-lg">
+            <p className="text-base md:text-lg text-maranja-darkblue/70 mb-8 max-w-lg">
               Boost your clinic with complete marketing and automation solutions.
               Attract more patients and provide a superior experience.
             </p>
@@ -29,25 +29,16 @@ const EnglishHero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 max-w-xl">
-              <Button 
-                size="lg" 
-                className="bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white w-full sm:w-1/2" 
-                onClick={() => document.getElementById("quote")?.scrollIntoView({
-                  behavior: "smooth"
-                })}
-              >
+              <Button size="lg" className="bg-maranja-darkblue hover:bg-maranja-darkblue/90 text-white w-full sm:w-1/2" onClick={() => document.getElementById("quote")?.scrollIntoView({
+                behavior: "smooth"
+              })}>
                 <Phone className="h-4 w-4 mr-2" />
                 Contact Us
               </Button>
               
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-maranja-darkblue text-maranja-darkblue hover:bg-maranja-darkblue hover:text-white w-full sm:w-1/2" 
-                onClick={() => document.getElementById("services")?.scrollIntoView({
-                  behavior: "smooth"
-                })}
-              >
+              <Button variant="outline" size="lg" className="border-maranja-darkblue text-maranja-darkblue hover:bg-maranja-darkblue hover:text-white w-full sm:w-1/2" onClick={() => document.getElementById("services")?.scrollIntoView({
+                behavior: "smooth"
+              })}>
                 Our Services
               </Button>
             </div>

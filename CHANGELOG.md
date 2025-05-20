@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.0.0] - 2024-03-19
+
+### Adicionado
+- Implementação inicial do site da Maranjá
+- Sistema de seleção de idiomas (PT/EN)
+- Componentes de bandeiras para seleção de idioma
+- Seções principais do site:
+  - Hero
+  - Serviços
+  - Contato
+  - Footer
+
+### Melhorias
+- Design responsivo para todas as seções
+- Integração com WhatsApp
+- Formulário de contato
+- Animações e transições suaves
+
+### Correções
+- Ajuste nas bandeiras de idioma para melhor visualização
+- Correção de espaçamentos e alinhamentos
+- Padronização de fontes e cores
+
+### Técnico
+- Configuração do Vite + React + TypeScript
+- Implementação do Tailwind CSS
+- Integração com Supabase
+- Configuração de rotas com React Router
+- Implementação de componentes reutilizáveis com shadcn/ui
+
 ## [1.0.1] - 2024-03-19
 
 ### Correções de UI

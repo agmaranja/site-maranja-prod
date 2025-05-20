@@ -36,13 +36,71 @@ const BrazilFlag = () => (
 );
 
 const USAFlag = () => (
-  <div className="usa-flag w-7 h-5 relative bg-white rounded-sm overflow-hidden">
-    <div className="stripes absolute w-full h-full">
-      <div className="absolute inset-0 [background:repeating-linear-gradient(180deg,#B22234_0%,#B22234_7.69%,white_7.69%,white_15.38%)]"></div>
+  <div className="usa-flag w-7 h-5 relative bg-[#b22234] rounded-sm overflow-hidden">
+    {/* Listras vermelhas e brancas */}
+    <div className="stripes absolute w-full h-full z-[1]">
+      <div className="absolute inset-0 [background:repeating-linear-gradient(180deg,#b22234_0%,#b22234_7.69%,white_7.69%,white_15.38%)]"></div>
     </div>
-    <div className="union absolute w-[36%] h-[54%] bg-[#002868] top-0 left-0 
-      flex items-center justify-center">
-      <span className="text-white text-[2.5px] transform -translate-y-[0.5px]">★</span>
+    
+    {/* Cantão azul */}
+    <div className="union absolute w-[40%] h-[54%] bg-[#191b6d] top-0 left-0 z-[2]"></div>
+
+    {/* Grid de estrelas */}
+    <div className="stars absolute top-[1px] left-[1px] w-[9px] h-[9px] flex flex-col justify-between z-[3]">
+      {/* Primeira linha - 6 estrelas */}
+      <div className="star-row flex justify-between">
+        {[...Array(6)].map((_, i) => (
+          <span key={`star-1-${i}`} className="text-white text-[1.2px] leading-none drop-shadow-[0_0_0.2px_#000]">★</span>
+        ))}
+      </div>
+      {/* Segunda linha - 5 estrelas */}
+      <div className="star-row flex justify-between ml-[0.6px] w-[7.8px]">
+        {[...Array(5)].map((_, i) => (
+          <span key={`star-2-${i}`} className="text-white text-[1.2px] leading-none drop-shadow-[0_0_0.2px_#000]">★</span>
+        ))}
+      </div>
+      {/* Terceira linha - 6 estrelas */}
+      <div className="star-row flex justify-between">
+        {[...Array(6)].map((_, i) => (
+          <span key={`star-3-${i}`} className="text-white text-[1.2px] leading-none drop-shadow-[0_0_0.2px_#000]">★</span>
+        ))}
+      </div>
+      {/* Quarta linha - 5 estrelas */}
+      <div className="star-row flex justify-between ml-[0.6px] w-[7.8px]">
+        {[...Array(5)].map((_, i) => (
+          <span key={`star-4-${i}`} className="text-white text-[1.2px] leading-none drop-shadow-[0_0_0.2px_#000]">★</span>
+        ))}
+      </div>
+      {/* Quinta linha - 6 estrelas */}
+      <div className="star-row flex justify-between">
+        {[...Array(6)].map((_, i) => (
+          <span key={`star-5-${i}`} className="text-white text-[1.2px] leading-none drop-shadow-[0_0_0.2px_#000]">★</span>
+        ))}
+      </div>
+      {/* Sexta linha - 5 estrelas */}
+      <div className="star-row flex justify-between ml-[0.6px] w-[7.8px]">
+        {[...Array(5)].map((_, i) => (
+          <span key={`star-6-${i}`} className="text-white text-[1.2px] leading-none drop-shadow-[0_0_0.2px_#000]">★</span>
+        ))}
+      </div>
+      {/* Sétima linha - 6 estrelas */}
+      <div className="star-row flex justify-between">
+        {[...Array(6)].map((_, i) => (
+          <span key={`star-7-${i}`} className="text-white text-[1.2px] leading-none drop-shadow-[0_0_0.2px_#000]">★</span>
+        ))}
+      </div>
+      {/* Oitava linha - 5 estrelas */}
+      <div className="star-row flex justify-between ml-[0.6px] w-[7.8px]">
+        {[...Array(5)].map((_, i) => (
+          <span key={`star-8-${i}`} className="text-white text-[1.2px] leading-none drop-shadow-[0_0_0.2px_#000]">★</span>
+        ))}
+      </div>
+      {/* Nona linha - 6 estrelas */}
+      <div className="star-row flex justify-between">
+        {[...Array(6)].map((_, i) => (
+          <span key={`star-9-${i}`} className="text-white text-[1.2px] leading-none drop-shadow-[0_0_0.2px_#000]">★</span>
+        ))}
+      </div>
     </div>
   </div>
 );
@@ -81,12 +139,12 @@ const LanguageSelector = () => {
           {currentLanguage === "pt-BR" ? (
             <>
               <BrazilFlag />
-              <span className="text-xs">PT</span>
+              <span className="text-xs font-medium">PT</span>
             </>
           ) : (
             <>
               <USAFlag />
-              <span className="text-xs">EN</span>
+              <span className="text-xs font-medium">EN</span>
             </>
           )}
           <Flag className="h-3 w-3" />
@@ -95,11 +153,11 @@ const LanguageSelector = () => {
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => handleLanguageChange("pt-BR")} className="cursor-pointer">
           <BrazilFlag />
-          <span className="ml-2">Português</span>
+          <span className="ml-2 text-sm font-medium">Português</span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => handleLanguageChange("en-US")} className="cursor-pointer">
           <USAFlag />
-          <span className="ml-2">English</span>
+          <span className="ml-2 text-sm font-medium">English</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
