@@ -1,73 +1,90 @@
-# Welcome to your Lovable project
+# Site Maranja - Produção
 
-## Project info
+Este é o repositório oficial do site de produção da Maranja, desenvolvido com tecnologias modernas e focado em uma experiência de usuário excepcional.
 
-**URL**: https://lovable.dev/projects/eab99c22-f620-4800-99be-03c1b5e5cc2d
+## 🚀 Tecnologias Utilizadas
 
-## How can I edit this code?
+- [Vite](https://vitejs.dev/) - Build tool e servidor de desenvolvimento
+- [React](https://reactjs.org/) - Biblioteca JavaScript para construção de interfaces
+- [TypeScript](https://www.typescriptlang.org/) - Superset JavaScript com tipagem estática
+- [Tailwind CSS](https://tailwindcss.com/) - Framework CSS utilitário
+- [shadcn/ui](https://ui.shadcn.com/) - Componentes de UI reutilizáveis
+- [Supabase](https://supabase.com/) - Backend as a Service
 
-There are several ways of editing your application.
+## 📋 Pré-requisitos
 
-**Use Lovable**
+- Node.js (versão 18 ou superior)
+- npm ou yarn
+- Git
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/eab99c22-f620-4800-99be-03c1b5e5cc2d) and start prompting.
+## 🔧 Instalação
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+1. Clone o repositório:
+```bash
+git clone https://github.com/agmaranja/site-maranja-prod.git
+cd site-maranja-prod
 ```
 
-**Edit a file directly in GitHub**
+2. Instale as dependências:
+```bash
+npm install
+# ou
+yarn install
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. Inicie o servidor de desenvolvimento:
+```bash
+npm run dev
+# ou
+yarn dev
+```
 
-**Use GitHub Codespaces**
+O site estará disponível em `http://localhost:5173`
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🏗️ Estrutura do Projeto
 
-## What technologies are used for this project?
+```
+site-maranja-prod/
+├── src/
+│   ├── components/     # Componentes reutilizáveis
+│   ├── pages/         # Páginas da aplicação
+│   ├── styles/        # Estilos globais
+│   └── utils/         # Funções utilitárias
+├── public/            # Arquivos estáticos
+└── supabase/         # Configurações do Supabase
+```
 
-This project is built with:
+## 🚀 Deploy
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+O site está configurado para deploy automático através do GitHub Actions. Cada push para a branch `main` aciona o processo de deploy.
 
-## How can I deploy this project?
+## 🔐 Variáveis de Ambiente
 
-Simply open [Lovable](https://lovable.dev/projects/eab99c22-f620-4800-99be-03c1b5e5cc2d) and click on Share -> Publish.
+Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
 
-## Can I connect a custom domain to my Lovable project?
+```env
+VITE_SUPABASE_URL=sua_url_do_supabase
+VITE_SUPABASE_ANON_KEY=sua_chave_anonima_do_supabase
+```
 
-Yes, you can!
+## 🤝 Contribuindo
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. Faça um Fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 📞 Suporte
+
+Para suporte, envie um email para agmaranja@gmail.com ou abra uma issue no repositório.
+
+## 🙏 Agradecimentos
+
+- Equipe de desenvolvimento
+- Comunidade open source
+- Todos os contribuidores
