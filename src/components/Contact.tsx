@@ -102,7 +102,7 @@ const Contact = () => {
 
               <Button 
                 size="lg" 
-                className="w-full bg-maranja-gradient hover:opacity-90 text-white"
+                className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:opacity-90 text-white"
               >
                 Enviar Mensagem
               </Button>
