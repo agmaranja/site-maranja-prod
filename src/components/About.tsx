@@ -35,14 +35,14 @@ const About = () => {
 
             <Button 
               size="lg" 
-              className="bg-maranja-gradient hover:opacity-90 text-white"
+              className="bg-gradient-to-r from-orange-500 to-red-600 hover:opacity-90 text-white"
             >
               Conheça Nossa História
             </Button>
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 bg-maranja-gradient rounded-3xl blur-3xl opacity-20"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-600 rounded-3xl blur-3xl opacity-20"></div>
             <img 
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               alt="Equipe trabalhando em escritório moderno"
