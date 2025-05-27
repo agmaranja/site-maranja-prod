@@ -1,7 +1,8 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import tailwindcss from "tailwindcss";
+import tailwindcss from "@tailwindcss/postcss";
 import autoprefixer from "autoprefixer";
 import { componentTagger } from "lovable-tagger";
 
@@ -12,6 +13,9 @@ export default defineConfig({
     react(),
     process.env.NODE_ENV === 'development' && componentTagger(),
   ].filter(Boolean),
+  server: {
+    port: 8080
+  },
   css: {
     postcss: {
       plugins: [
