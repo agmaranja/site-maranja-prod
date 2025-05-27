@@ -65,8 +65,14 @@ export default {
 				maranja: {
 					beige: '#f5f0e5',
 					darkblue: '#1d2d35',
-					cream: '#faf6ee'
+					cream: '#faf6ee',
+					500: '#ff7f50',
+					100: '#ffe4c4',
+					600: '#ff6347',
 				}
+			},
+			backgroundImage: {
+				'maranja-gradient': 'linear-gradient(to right, #ff7f50, #ff6347)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

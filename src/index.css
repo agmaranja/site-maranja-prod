@@ -90,3 +90,10 @@
     @apply font-heading;
   }
 }
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #ff7f50, #ff6347);
+}
